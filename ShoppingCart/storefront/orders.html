@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Frontpage | Order History</title>
+	<!-- To Clear Cookies -->
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome icons -->
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //font-awesome icons -->
+	<!-- js -->
+	<script src="js/shop.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<!-- //js -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'
+		rel='stylesheet' type='text/css'>
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+		rel='stylesheet' type='text/css'>
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="a2z_header">
+
+		<div class="header_right1">
+			<a href="#" onclick="showCartItems('cartItems')"><i class="fa fa-shopping-cart fa-2x"
+					aria-hidden="true"><span class='badge badge-warning' style="vertical-align: top" id='cartCount'> 0
+					</span></i></a>
+
+		</div>
+
+		<div class="header_right">
+			<a href="#"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+		</div>
+		<div class="header_right">
+			<a href="#"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
+		</div>
+		<div class="header_right">
+			<a href="#" onclick="showUserProfile('userProfile')"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!-- script-for sticky-nav -->
+	<script>
+		$(document).ready(function () {
+			var navoffeset = $(".a2z_header").offset().top;
+			$(window).scroll(function () {
+				var scrollpos = $(window).scrollTop();
+				if (scrollpos >= navoffeset) {
+					$(".a2z_header").addClass("fixed");
+				} else {
+					$(".a2z_header").removeClass("fixed");
+				}
+			});
+
+		});
+	</script>
+	<!-- //script-for sticky-nav -->
+	<div class="logo_products">
+		<div class="container">
+			<div class="logo_products_left">
+				<a href="index.html"><img src="" id="shopLogoLink"></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<div class="logo_products_left1">
+				<ul class="special_items">
+					<li><a href="#" onclick="replaceContainer('about')">About Us</a><i>/</i></li>
+					<li><a href="#" onclick="replaceContainer('offers')">Offers</a><i>/</i></li>
+					<li><a href="#" onclick="replaceContainer('contact')">Contact us</a></li>
+				</ul>
+			</div>
+			<div class="logo_products_left1">
+				<ul class="phone_email">
+					<li><i class="fa fa-phone" aria-hidden="true"></i><span id="header_phone">(+91) 9415 000 839</span>
+					</li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@store.com"
+							id="header_email">store@store.com</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- Menu  -->
+	<div style="text-align:center; background:#000">
+		<nav class="navbar nav_bottom">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header nav_2">
+				<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
+					data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+				<ul class="nav navbar-nav nav_1">
+					<li><a href="index.html">Default</a></li>
+					<li><a href="#">Category 1</a></li>
+					<li><a href="#">Category 2</a></li>
+					<li><a href="#">Category 3</a></li>
+					<li><a href="#">Category 4</a></li>
+					<li><a href="#">Category 5</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</div>
+	<!-- Menu-->
+	<!-- //header -->
+	<!-- Orders -->
+
+
+	<div class="user_order container">
+		<h2 class="" style="margin:2em 0;">Order History</h2>
+		<div class="checkout-right">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-2">
+						<!--		Show Numbers Of Rows 		-->
+						# Order/s placed in
+					</div>
+					<div class="col-sm-4" style="margin: -5px 0 10px -38px;">
+						<select class="form-control drop-select" name="state" id="maxRows">
+							<option value="5">this month</option>
+							<option value="10">last month</option>
+							<option value="50">3 months</option>
+							<option value="5000">6 months</option>
+						</select>
+					</div>
+				</div>
+				<div class="row col-md-12 col-xs-12">
+					<div class="table-responsive">
+						<div class="container">
+							<div class="col-sm-10"
+								style="background-color:#f6f6f6;border: solid #D8D8D8 1px;padding:0;border-radius: 5px;margin: 2em 0;">
+								<div class="col-sm-12"
+									style="padding: 0;border-radius: 5px 5px 0 0;background-color:#E8E8E8;border: solid #D8D8D8 1px;"
+									align="center">
+									<div class="col-sm-2">
+										Order Placed
+										<div class="clearfix"></div>
+										<span>### Date ####</span>
+									</div>
+									<div class="col-sm-2">
+										Total<div class="clearfix"></div><span>### Price ###</span>
+									</div>
+									<div class="col-sm-2">
+										Shipped to: <div class="clearfix"></div><span>### Rahul ###</span>
+									</div>
+									<div style="float: right;" class="col-sm-3">
+										Order ID: <span>###</span>
+										<div class="clearfix"></div>
+										<span><a href="#">Order Details</a></span> | <span><a
+												href="#">Invoice</a></span>
+									</div>
+								</div>
+								<div class="col-sm-12" style="padding: 2em;;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 1 - Dummy product item</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>3544</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-warning"
+											style="float: right;margin: 14px 0;width: 12em;">Re-order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-info"
+											style="float: right;width: 12em;">Contact Shop</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-10"
+								style="background-color:#f6f6f6;border: solid #D8D8D8 1px;padding:0;border-radius: 5px;margin: 2em 0;">
+								<div class="col-sm-12"
+									style="padding: 0;border-radius: 5px 5px 0 0;background-color:#E8E8E8;border: solid #D8D8D8 1px;"
+									align="center">
+									<div class="col-sm-2">
+										Order Placed
+										<div class="clearfix"></div>
+										<span>### Date ####</span>
+									</div>
+									<div class="col-sm-2">
+										Total<div class="clearfix"></div><span>### Price ###</span>
+									</div>
+									<div class="col-sm-2">
+										Shipped to: <div class="clearfix"></div><span>### Rahul ###</span>
+									</div>
+									<div style="float: right;" class="col-sm-3">
+										Order ID: <span>###</span>
+										<div class="clearfix"></div>
+										<span><a href="#">Order Details</a></span> | <span><a
+												href="#">Invoice</a></span>
+									</div>
+								</div>
+								<div class="col-sm-12" style="padding: 2em;;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 2 - Dummy product item</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>3544</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-warning"
+											style="float: right;margin: 14px 0;width: 12em;">Re-order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-info"
+											style="float: right;width: 12em;">Contact Shop</button>
+									</div>
+								</div>
+
+								<div class="col-sm-12" style="padding: 2em;;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 3 - Dummy product item</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>3544</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-warning"
+											style="float: right;margin: 14px 0;width: 12em;">Re-order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-info"
+											style="float: right;width: 12em;">Contact Shop</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="col-sm-6">
+								<nav>
+									<ul class="pagination"></ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="checkout-right-basket" style="margin: -2em 0 1em 0;">
+				<a href="user_container.html"><span class="glyphicon glyphicon-chevron-left"
+						aria-hidden="true"></span>Back</a>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+
+	<!-- //top-brands -->
+
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-3 footer_grid">
+				<h3>Section1</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 2</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 3</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 4</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="a2z_footer_grids">
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h4>100% secure payments</h4>
+						<img src="images/card.png" alt=" " class="img-responsive" />
+					</div>
+				</div>
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h5>connect with us</h5>
+						<ul class="a2z_social_icons">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
+							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+				<a onclick="topFunction()" id="myBtn" title="Go to top" class="right">Go to Top <i
+						class="fa fa-arrow-up" aria-hidden="true"></i></a>
+			</div>
+			<div class="footer_copy">
+				<p>&copy; 2016 Grocery Store. All rights reserved | Design by <a href="#">Anurodh</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

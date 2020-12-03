@@ -1,0 +1,44 @@
+
+<!-- mail -->
+		<div class="login">
+			<h3>Sign In &amp; Sign Up</h3>
+			<div class="login_module">
+				<div class="module form-module">
+				  <div class="form" style="display: block;">
+					<h2>Login to your account</h2>
+					<form action="#" method="post">
+					  <input type="text" name="Username" placeholder="Username" required=" ">
+					  <input type="password" name="Password" placeholder="Password" required=" ">
+					  <input type="submit" value="Login" onclick="initlogin(event)">
+					  <div class="toggle">Sign up Form</div>
+					</form>
+				  </div>
+				  <div class="form" style="display: none;">
+					<h2>Create an account</h2>
+					<form action="#" method="post">
+					  <input type="text" name="Username" placeholder="Username" required=" ">
+					  <input type="password" name="Password" placeholder="Password" required=" ">
+					  <input type="email" name="Email" placeholder="Email Address" required=" ">
+					  <input type="text" name="Phone" placeholder="Phone Number" required=" ">
+					  <input type="submit" value="Register" onclick="initRegistration(event)">
+					  <div class="toggle">Login Form</div>
+					</form>
+				  </div>
+				  <div class="cta"><a href="#">Forgot your password?</a></div>
+				</div>
+			</div>
+			<script>
+				&#8377; ('.toggle').click(function(){
+				  // Switches the Icon
+				  &#8377; (this).children('i').toggleClass('fa-pencil');
+				  // Switches the forms
+				  &#8377; ('.form').animate({
+					height: "toggle",
+					'padding-top': 'toggle',
+					'padding-bottom': 'toggle',
+					opacity: "toggle"
+				  }, "slow");
+				});
+			</script>
+		</div>
+<!-- //mail -->

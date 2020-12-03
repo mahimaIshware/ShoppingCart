@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Frontpage | Order History</title>
+	<!-- To Clear Cookies -->
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome icons -->
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- //font-awesome icons -->
+	<!-- js -->
+	<script src="js/shop.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<!-- //js -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'
+		rel='stylesheet' type='text/css'>
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+		rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- script-for sticky-nav -->
+	<script>
+		$(document).ready(function () {
+			var navoffeset = $(".a2z_header").offset().top;
+			$(window).scroll(function () {
+				var scrollpos = $(window).scrollTop();
+				if (scrollpos >= navoffeset) {
+					$(".a2z_header").addClass("fixed");
+				} else {
+					$(".a2z_header").removeClass("fixed");
+				}
+			});
+
+		});
+	</script>
+	<!-- //script-for sticky-nav -->
+
+	<!-- Orders Details -->
+
+
+	<div class="user_order container">
+		<h2 class="" style="margin:1em 0;">Orders for Approval</h2>
+		<div class="col-sm-12"style="margin:10px;">
+				<a href="orders.html"><button type="button" class="btn btn-danger"
+					style="float: right;margin:0 14px;"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Order Page</button></a>
+				<button type="button" class="btn btn-success"
+					style="float: right;margin:0 14px;">Approve All</button>
+			</div>
+		<div class="checkout-right">
+			<div class="container-fluid">
+				<div class="row col-md-12 col-xs-12">
+					<div>
+						<div class="container">
+							<div class="col-sm-10"
+								style="background-color:#f6f6f6;border: solid #D8D8D8 1px;padding:0;border-radius: 5px;margin: 2em 0;">
+								<div class="col-sm-12"
+									style="padding: 0;border-radius: 5px 5px 0 0;background-color:#E8E8E8;border: solid #D8D8D8 1px;"
+									align="center">
+									<div class="col-sm-2">
+										Order Placed
+										<div class="clearfix"></div>
+										<span>### Date ####</span>
+									</div>
+									<div class="col-sm-2">
+										Total<div class="clearfix"></div><span>### Price ###</span>
+									</div>
+									<div class="col-sm-2">
+										Ordered By: <div class="clearfix"></div><span>### Rahul ###</span>
+									</div>
+									<div class="col-sm-2">
+										Payment Mode: <div class="clearfix"></div><span>### Cash ###</span>
+									</div>
+									<div style="float: right;" class="col-sm-3">
+										Order ID: <div class="clearfix"></div><span>### ID 123456 ###</span>
+									</div>
+								</div>
+								<div class="col-sm-12" style="padding: 2em;;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 1</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>3544</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-success"
+											style="float: right;margin: 14px 0;width: 12em;">Approve Order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-danger"
+											style="float: right;width: 12em;">Cancel Order</button>
+									</div>
+								</div>
+								<div class="col-sm-12" style="padding: 2em;border-top: 1px solid #B8B8B8;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 2</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>3544</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-success"
+											style="float: right;margin: 14px 0;width: 12em;">Approve Order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-danger"
+											style="float: right;width: 12em;">Cancel Order</button>
+									</div>
+								</div>
+								<div class="col-sm-12" style="padding: 2em;border-top: 1px solid #B8B8B8;">
+									<div style="padding: 5px;" class="col-sm-6">
+										<div class="col-sm-4">
+											<a href=""><img src="images/channa.jpg" alt=" " class="img-responsive"></a>
+										</div>
+										<div class="col-sm-8">
+											<a href="#">Product Name 3</a>
+											<div class="clearfix"></div>
+											<div class="soldfont">Sold by: <span>##### Shop Name #####</span></div>
+											<div class="clearfix"></div>
+											<div class="soldfont">₹ <span>4499</span> | Qty: <span>###</span></div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-success"
+											style="float: right;margin: 14px 0;width: 12em;">Approve Order</button>
+										<div class="clearfix"></div>
+										<button type="button" class="btn btn-danger"
+											style="float: right;width: 12em;">Cancel Order</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="col-sm-12"style="margin:10px;">
+				<a href="orders.html"><button type="button" class="btn btn-danger"
+					style="float: right;margin:0 14px;"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Order Page</button></a>
+				<button type="button" class="btn btn-success"
+					style="float: right;margin:0 14px;">Approve All</button>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+
+	<!-- //top-brands -->
+
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-3 footer_grid">
+				<h3>Section1</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 2</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 3</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 4</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="a2z_footer_grids">
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h4>100% secure payments</h4>
+						<img src="images/card.png" alt=" " class="img-responsive" />
+					</div>
+				</div>
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h5>connect with us</h5>
+						<ul class="a2z_social_icons">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+							</li>
+							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+				<a onclick="topFunction()" id="myBtn" title="Go to top" class="right">Go to Top <i
+						class="fa fa-arrow-up" aria-hidden="true"></i></a>
+			</div>
+			<div class="footer_copy">
+				<p>&copy; 2016 Grocery Store. All rights reserved | Design by <a href="#">Anurodh</a></p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

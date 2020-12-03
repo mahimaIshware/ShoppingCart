@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store Admin</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/shop.js"></script>
+<!-- //js -->
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner">
+		<div class="banner_nav_left">
+		<div class="logo_products_left">
+				<a href="index.html"><img src="images/logo.png" alt="logo" class="image_logo_thumbnail" id="shopLogoLink"></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<nav class="navbar nav_bottom">
+			 <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header nav_2">
+				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+			   </div> 
+			   <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav nav_1">
+						<li><a href="storeConfig.html">Store Config</a></li>
+						<li><a href="category.html">Category</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="orders.html">Orders<span class="notification_bubble" style="display:none" id="new_cart_count"></span></a></li>
+						<li><a href="users.html">Users</a></li>
+						<li><a href="offer.html">Offers</a></li>
+						<li></li>
+					</ul>
+					<button class="log_out">Log Out</button>
+				 </div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+		<div class="banner_nav_right">
+			<section>
+				<div class="banner_nav_right_banner">
+						<h1>Dashboard</h1>
+								<h3 id="admin_name">Welcome <span>Anurodh</span> !!.</h3>
+								<p>description for this page.</p>								
+								
+								<div>
+								<h3>Add/ Modify a new Category</h3>
+								<div class="col-md-8">
+				<form  method="post" class="form" id="add_update_vendor_config">
+									<section class="wrapper">
+										<div class="information-wrapper">
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Name: </label>
+												<input class="form-control" type="text" id="shopName" placeholder="Shop name">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Category Name: </label>
+												<input class="form-control" type="text" name="name" id="category_name" placeholder="Category Name">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Category Description:</label>
+												<input class="form-control" type="text" id="categoryDescription" placeholder="Category Description">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Status: </label>
+												<select class="form-control" type="text" id="status" placeholder="Status">
+												<option>Active</option>
+												<option>Inactive</option>
+												</select>
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Delivery Flag: </label>
+												<select class="form-control" id="deliveryFlag">
+												<option>Enabled</option>
+												<option>Disabled</option>
+												</select>
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Delivery Location ID:</label>
+												<input class="form-control" type="text" id="deliveryLocationId" placeholder="Delivery Location ID">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Delivery Start Time:</label>
+												<input class="form-control" step="any" type="time" id="deliveryStartTime" placeholder="Delivery Start Time">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Delivery End Time:</label>
+												<input class="form-control" step="any" type="time" id="deliveryEndTime" placeholder="Delivery End Time">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Store Start Time:</label>
+												<input class="form-control" step="any" type="time" id="storeStartTime" placeholder="Store Start Time">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Store End Time:</label>
+												<input class="form-control" step="any" type="time" id="storeEndTime" placeholder="Store End Time">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Store Open Days:</label>
+												<input class="form-control" type="text" id="storeOpenDays" placeholder="Store Open Days">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Contact NO:</label>
+												<input class="form-control" type="text" id="phone" placeholder="Telephone No">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Address:</label>
+												<input class="form-control" type="text" id="address" placeholder="Address">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Country: </label> <select
+													class="form-control" id="country_code">
+													<option value="India">India</option>
+													<option value="USA">USA</option>
+												</select>
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Logo:</label>
+												<div class="row " id="div_shop_logo">
+												<div class="col-lg-6">
+												    <span><img src="images/channa.jpg" class="image_logo_thumbnail" id="shopLogoLinkEdit"></span>
+												    </div>
+												  <div class="col-lg-6 text-center margin-top">
+												    <button  class="btn-lg pull-right margin-top " id="btn_image_change" >Change</button>
+												  </div>
+												</div>
+												<div class="row " id="div_shop_file_select" style="display: none">
+												<div class="col-lg-9">
+												<input class="form-control" type="file" id="shopLogoSelect" placeholder="Upload image">
+												</div>
+												<div class="col-lg-3">
+												 <button  class="btn-sm pull-right " id="btn_image_upload" disabled="disabled" >Upload Image</button>
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Email:</label>
+												<input class="form-control" type="email" id="email" placeholder="Example@a2z.com">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features First:</label>
+												<input class="form-control" type="text" id="featuresOne" placeholder="features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features Two:</label>
+												<input class="form-control" type="text" id="featuresTwo" placeholder="features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features Three:</label>
+												<input class="form-control" type="text" id="featuresThree" placeholder="features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features Four:</label>
+												<input class="form-control" type="text" id="featuresFour" placeholder="Features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features Five:</label>
+												<input class="form-control" type="text" id="featuresFive" placeholder="features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shop Features Six :</label>
+												<input class="form-control" type="text" id="featuresSix" placeholder="features">
+											</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">Shopfront About Us Logo:</label>
+												<div class="row " id="div_shop_logo_about">
+												<div class="col-lg-6">
+												    <span><img src="images/channa.jpg" class="img-responsive" id="aboutShopLogoLink"></span>
+												    </div>
+												  <div class="col-lg-6 text-center margin-top">
+												    <button  class="btn-lg pull-right margin-top " id="btn_image_change_about" >Change</button>
+												  </div>
+												</div>
+												<div class="row " id="div_shop_file_select_about" style="display: none">
+												<div class="col-lg-9">
+												<input class="form-control" type="file" id="shopLogoSelectAbout" placeholder="Upload image">
+												</div>
+												<div class="col-lg-3">
+												 <button  class="btn-sm pull-right " id="btn_image_upload_about" disabled="disabled" >Upload Image</button>
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="grids">
+											<div class="controls">
+												<label class="control-label">About Us:</label>
+												<textarea class="form-control" wrap="hard" id="aboutUs" placeholder="About Us"></textarea>
+											</div>
+										</div>
+										
+										<div class="clear"> </div>
+										<div class="row margin-top">
+											<div class="col-lg-6">
+											  <a href="storeConfig.html"><button class="btn-lg right">Back</button></a>
+											    </div>
+											  <div class="col-lg-6">
+											    <button class="submit check_out btn-lg">Submit</button>
+											  </div>
+											</div>	
+										</div>
+									</section>
+								</form>
+					</div>
+							</div>
+			</section>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<!-- banner -->
+	
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<p><b>Privacy Policy:</b> All cited trademarks are the property of their respective owners. CAUTION: The law restricts these devices to sale by or on the order of a physician. Indications, contraindications, warnings and instructions for use can be found in the product labelling supplied with each device. Information for the use only in countries with applicable health authority product registrations. </p>
+			<div class="clearfix"> </div>
+			<div class="footer_copy">
+				<p>2015 Copyright &copy; Boston Scientific Corporation. All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+window.addEventListener('load', (event) => {
+	  console.log('page is fully loaded. checking for db health...');
+	  console.log(new URLSearchParams(window.location.search).get("vendorId"));
+	  console.log(new URLSearchParams(window.location.search).get("shopName"));
+	  console.log(new URLSearchParams(window.location.search).get("categories"));
+	  console.log(new URLSearchParams(window.location.search).get("editMode"));
+	  loadVendorConfigEditPage(new URLSearchParams(window.location.search));
+	});
+	$(document).ready(function(){;
+		$("#shopLogoSelect").change(function(event){
+			validateImage($("#shopLogoSelect")[0].files[0],new URLSearchParams(window.location.search).get("vendorId"),"thumbnail","vendorConfig",new URLSearchParams(window.location.search).get("editMode"),null);
+		});
+		$("#shopLogoSelectAbout").change(function(event){
+			validateImage($("#shopLogoSelectAbout")[0].files[0],new URLSearchParams(window.location.search).get("vendorId"), "aboutUs", "vendorConfig",new URLSearchParams(window.location.search).get("editMode"),null);
+		});
+		$("#btn_image_change").click(function(event){
+			event.preventDefault();
+			$("#div_shop_logo").hide();
+			$("#div_shop_file_select").show();
+		});
+		$("#btn_image_change_about").click(function(event){
+			event.preventDefault();
+			$("#div_shop_logo_about").hide();
+			$("#div_shop_file_select_about").show();
+		});
+		$("#add_update_vendor_config").submit(function (event){
+			event.preventDefault();
+			addUpdateVendorConfig(new URLSearchParams(window.location.search));
+		});
+		$("#btn_image_upload").click(function(event){
+			event.preventDefault();
+			uploadImage($("#shopLogoSelect")[0].files[0],new URLSearchParams(window.location.search).get("vendorId"),"thumbnail","vendorConfig", null,new URLSearchParams(window.location.search).get("editMode"));
+		});
+		$("#btn_image_upload_about").click(function(event){
+			event.preventDefault();
+			uploadImage($("#shopLogoSelectAbout")[0].files[0],new URLSearchParams(window.location.search).get("vendorId"),"aboutUs", "vendorConfig",null,new URLSearchParams(window.location.search).get("editMode"));
+		});
+	})
+</script>
+</body>
+</html>

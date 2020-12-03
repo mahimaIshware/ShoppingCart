@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping Frontpage | Home</title>
+<!-- To Clear Cookies -->
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(&#8377; ) {
+		&#8377; (".scroll").click(function(event){		
+			event.preventDefault();
+			&#8377; ('html,body').animate({scrollTop:&#8377; (this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+	
+<body>
+<!-- header -->
+	<div class="a2z_header">
+
+      <div class="header_right1">
+			<a href="#"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></a>
+		</div>
+      
+	   <div class="header_right">
+			<a href="#"><i class="fa fa-sign-in fa-3x" aria-hidden="true"></i></a>
+		</div>	
+		 <div class="header_right">
+			<a href="#"><i class="fa fa-map-marker fa-3x" aria-hidden="true"></i></a>
+		</div>
+		
+				
+		<div class="clearfix"> </div>
+	</div>
+<!-- script-for sticky-nav -->
+	<script>
+	&#8377; (document).ready(function() {
+		 var navoffeset=&#8377; (".a2z_header").offset().top;
+		 &#8377; (window).scroll(function(){
+			var scrollpos=&#8377; (window).scrollTop(); 
+			if(scrollpos >=navoffeset){
+				&#8377; (".a2z_header").addClass("fixed");
+			}else{
+				&#8377; (".a2z_header").removeClass("fixed");
+			}
+		 });
+		 
+	});
+	</script>
+<!-- //script-for sticky-nav -->
+	<div class="logo_products">
+		<div class="container">
+			<div class="logo_products_left">
+				<a href="index.html"><img src="images/logo.png" alt="logo" width="167" height="97" /></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<div class="logo_products_left1">
+				<ul class="special_items">
+					<li><a href="about.html">About Us</a><i>/</i></li>
+					<li><a href="#">Best Deals</a><i>/</i></li>
+					<li><a href="contact.html">Contact us</a></li>
+				</ul>
+			</div>
+			<div class="logo_products_left1">
+				<ul class="phone_email">
+					<li><i class="fa fa-phone" aria-hidden="true"></i>(+91) 9415 000 839</li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@store.com">store@store.com</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->	
+<!-- breadcrumb -->
+	<div class="breadcrumb">
+		<div class="container">
+			<ul>
+				<li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+				<li>Sign Up Form</li>
+			</ul>
+		</div>
+	</div>
+<!-- // breadcrumb -->	
+<!-- content -->
+	<div class="content">
+<!-- about -->		
+		<div class="login">
+			<h3>Sign Up</h3>
+			<div class="login_module">
+				<div class="module form-module">
+				  <div class="form" style="display: block;">
+					<h2>Create an account</h2>
+					<form action="#" method="post">
+					  <input type="text" name="Username" placeholder="Username" required=" ">
+					  <input type="password" name="Password" placeholder="Password" required=" ">
+					  <input type="email" name="Email" placeholder="Email Address" required=" ">
+					  <input type="text" name="Phone" placeholder="Phone Number" required=" ">
+					  <input type="submit" value="Register">
+					  <div class="toggle"><a href="login.html">Login Form</a></div>
+					</form>
+				  </div>
+				  
+				  <div class="cta"><a href="forgetPassword.html">Forgot your password?</a></div>
+				</div>
+			</div>
+		</div>
+<!-- //about -->
+		<div class="clearfix"></div>
+	</div>
+<!-- //content -->
+
+<!-- footer -->
+	<div class="footer_copy">
+				<p>&copy; 2016 Grocery Store. All rights reserved | Design by <a href="#">Anurodh</a></p>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

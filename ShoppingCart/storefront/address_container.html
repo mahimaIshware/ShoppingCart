@@ -1,0 +1,41 @@
+<!-- address container bare -->
+<div class="login">
+	<h3>Delivery Address</h3>
+	<div class="login_module">
+		<div class="module form-module">
+			<div class="form" style="display: block;">
+				<h2>Address Details</h2>
+				<form action="#" method="post">
+					 <label>Full Name:</label>
+					 <input type="text"placeholder="full name" class="form-control" id="fullName"> 
+					 <label>House/flat/street no:</label> 
+					 <input type="text" placeholder="house/street/flat no" class="form-control" id="houseNo">
+					 <label>Address 1:</label> 
+					 <input type="text" placeholder="Address Line 1" class="form-control" id="addressFirst">
+					 <label>Address 2:</label>
+					 <input type="text" placeholder="Address Line 2" class="form-control" id="addressTwo"> 
+					  <label>Phone:</label>
+					 <input type="tel" maxlength="10" placeholder="contact No" class="form-control" id="phone">
+					 <label>City:</label>
+					 <input type="text" placeholder="City" class="form-control" id="city">
+					 <label>State:</label> 
+					 <input type="text" placeholder="State" class="form-control" id="state">
+					 <label>PinCode:</label>
+					 <input type="text" placeholder="Post Code" class="form-control" id="zip">
+					 <label>Landmark:</label>
+					 <input type="text" placeholder="Nearest Landmark" class="form-control" id="landmark"> 
+					 <label>Country:</label> 
+					 <input type="text" placeholder="Country" class="form-control" id="country">
+					 <input  type="hidden" placeholder="Nearest Landmark" class="form-control" id="addressID">  
+					<div class="col-sm-offset-2 col-sm-10">
+					<div class="pull-right">
+						<button type="submit" class="btn btn-default">Cancel</button>
+						<button type="submit" class="btn btn-primary" onclick="addUpdateDeliveryAddress(event)">Continue</button>
+					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store Admin</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/shop.js"></script>
+<script>
+	window.addEventListener('load' ,function(event){
+		 console.log('Product edit page is fully loaded.Dom is ready to manupulate functions...');
+		 loadProductEditPage(new URLSearchParams(window.location.search));
+	})
+	$(document).ready(function() {
+		$("#product_edit").click(function (e) {
+				e.preventDefault();
+				var pname= $("#product_name").val();
+				var pdesc = $("#product_desc").val();
+				var rate = $("#product_rate").val();
+				var stock = $("#product_stock").val();
+				var cate = $("#product_category option:selected").val();
+				var thumbnailPath = $("#product_img_link").attr('src');
+				var sqareImagePath = $("#product_img_sqr_link").attr('src');
+				var product_id =  $("#product_id_hidden").val();
+				console.log(pname);
+				console.log(pdesc);
+				initAddUpdateProducts(pname,pdesc,rate,stock,thumbnailPath,sqareImagePath,cate,product_id);
+		});
+		
+		$("#product_image_select").change(function(event){
+			validateImage($("#product_image_select")[0].files[0],"0000000002","thumbnail","vendorProduct",new URLSearchParams(window.location.search).get("editMode"), new URLSearchParams(window.location.search).get("product_id"));
+		});
+		$("#btn_image_change").click(function(event){
+			event.preventDefault();
+			$("#div_product_image").hide();
+			$("#div_product_image_select").show();
+		});
+		$("#btn_image_upload").click(function(event){
+			event.preventDefault();
+			uploadImage($("#product_image_select")[0].files[0],"0000000002","thumbnail", "vendorProduct",new URLSearchParams(window.location.search).get("product_id"),new URLSearchParams(window.location.search).get("editMode"));
+		});
+	});
+</script>
+<!-- //js -->
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner">
+		<div class="banner_nav_left">
+		<div class="logo_products_left">
+				<a href="index.html"><img src="images/logo.png" alt="logo" width="167" height="97"></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<nav class="navbar nav_bottom">
+			 <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header nav_2">
+				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+			   </div> 
+			   <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav nav_1">
+						<li><a href="storeConfig.html">Store Config</a></li>
+						<li><a href="category.html">Category</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="orders.html">Orders<span class="notification_bubble" style="display:none" id="new_cart_count"></span></a></li>
+						<li><a href="users.html">Users</a></li>
+						<li><a href="offer.html">Offers</a></li>
+						<li></li>
+					</ul>
+					<button class="log_out">Log Out</button>
+				 </div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+		<div class="banner_nav_right">
+			<section>
+				<div class="banner_nav_right_banner">
+						<h1>Dashboard</h1>
+								<h3 id="admin_name">Welcome <span>Anurodh</span> !!.</h3>
+								<p>description for this page.</p>								
+								
+								<div>
+								<h3>Add/ Modify Product</h3>
+								<div class="col-md-8">
+				<form action="products.html" method="post" class="form">
+									<section class="wrapper">
+										<div class="information-wrapper">
+											<div class="grids">
+												<div class="controls">
+													<label class="control-label">Product Name: </label>
+													<input id="product_name" class="form-control" type="text" name="name" placeholder="Product Name">
+													<input  id="product_id_hidden" class="form-control" type="hidden" value="">
+												</div>
+												<div class="grids">
+													<div class="controls">
+														<label class="control-label">Product Image:</label>
+														<div class="row " id="div_product_image">
+														<div class="col-lg-6">
+														    <span><img src="images/product.png" class="img-thumbnail" id="product_img_link"></span>
+														    <span style="display: none"><img src="images/product.png" class="img-thumbnail" id="product_img_sqr_link"></span>
+														    </div>
+														  <div class="col-lg-6 text-center margin-top">
+														    <button  class="btn-lg pull-right margin-top " id="btn_image_change" >Change</button>
+														  </div>
+														</div>
+														<div class="row " id="div_product_image_select" style="display: none">
+														<div class="col-lg-9">
+														 <input id="product_image_select" class="form-control" type="File" placeholder="Product image">
+														</div>
+														<div class="col-lg-3">
+														 <button  class="btn-sm pull-right " id="btn_image_upload" disabled="disabled" >Upload Image</button>
+														</div>
+													</div>
+												</div>
+												<div class="grids">
+													<div class="controls">
+														<label class="control-label">Product Description:</label>
+													    <input id = "product_desc" class="form-control" type="text" placeholder="Product Description">
+													</div>
+												</div>
+												<div class="grid">
+													<div class="controls">
+														<label class="control-label">Category:</label>
+														   <select id = "product_category" class="form-control" type="text" placeholder="Category">
+															<option>Category 1</option>
+														 	<option>Category 1</option>
+														 	</select>
+													</div>
+												</div>
+												<div class="grids">
+													<div class="controls">
+														<label class="control-label">Rate :&#8377;</label>
+													    <input id = "product_rate" class="form-control" type="text" placeholder="Product Rate">
+													</div>
+												</div>
+												<div class="grids">
+													<div class="controls">
+														<label class="control-label">Stock :</label>
+													    <input id = "product_stock" class="form-control" type="text" placeholder="Product Stock">
+													</div>
+												</div>
+													<div class="grid">
+														<div class="controls">
+															<label class="control-label">Status: </label>
+														 	<select id="product_status" class="form-control" type="text" placeholder="Status">
+														 	<option>Active</option>
+														 	<option>Inactive</option>
+														 	</select>
+														</div>
+													</div>
+													<div class="clear"> </div>
+												</div>
+											<div class="row margin-top">
+											<div class="col-lg-6">
+											  <a href="products.html"><button class="btn-lg right">Back</button></a>
+											    </div>
+											  <div class="col-lg-6">
+											    <button class="submit check_out btn-lg" id="product_edit">Submit</button>
+											  </div>
+											</div>	
+										</div>
+									</section>
+								</form>
+					</div>
+							</div>
+			</section>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<!-- banner -->
+	
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<p><b>Privacy Policy:</b> All cited trademarks are the property of their respective owners. CAUTION: The law restricts these devices to sale by or on the order of a physician. Indications, contraindications, warnings and instructions for use can be found in the product labelling supplied with each device. Information for the use only in countries with applicable health authority product registrations. </p>
+			<div class="clearfix"> </div>
+			<div class="footer_copy">
+				<p>2015 Copyright &copy; Boston Scientific Corporation. All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

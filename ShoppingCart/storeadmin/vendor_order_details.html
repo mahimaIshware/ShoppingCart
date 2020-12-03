@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vendor Order Details Page</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<style type="text/css">
+/* .container {
+    height:100%
+}
+#body{
+    margin-bottom:50px;
+} */
+.footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin-bottom: 0px;
+}
+
+.left_menu {
+	float: left;
+	background: #f5f5f5;
+}
+
+.navbar-collapse.collapse {
+	
+}
+
+.no_lp {
+	padding-left: 0px !important;
+}
+
+.navbar-nav>li {
+	
+}
+
+.navbar-nav>li>a {
+	padding: 12px 50px;
+}
+
+/* #myIframe {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+.navbar-default {
+    background-color: #f5f5f5;
+    border-color: #e7e7e7;
+}
+.banner_nav_left {
+    float: left;
+    width: 22%;
+    background: #f5f5f5;
+} */
+</style>
+</head>
+
+<body>
+	<!-- banner -->
+	<div class="col-sm-12 no_lp">
+		<div class="banner col-sm-2 no_lp">
+			<div class="left_menu">
+				<div class="logo_products_left">
+					<a href="index.html"><img src="images/logo.png" alt="logo"
+						width="167" height="97"></a>
+					<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+				</div>
+				<nav class="navbar nav_bottom">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header nav_2">
+						<button type="button"
+							class="navbar-toggle collapsed navbar-toggle1"
+							data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+						<ul class="nav navbar-nav nav_1">
+							<li><a href="storeConfig.html">Store Config</a></li>
+							<li><a href="category.html">Category</a></li>
+							<li><a href="products.html">Products</a></li>
+							<li><a href="orders.html">Orders<span
+									class="notification_bubble" style="display: none"
+									id="new_cart_count"></span></a></li>
+							<li><a href="users.html">Users</a></li>
+							<li><a href="offer.html">Offers</a></li>
+							<li></li>
+						</ul>
+						<button class="log_out">Log Out</button>
+					</div>
+					<!-- /.navbar-collapse -->
+				</nav>
+			</div>
+		</div>
+		<!-- right -->
+		<div class="col-sm-10">
+			<div class="navbar-default">
+				<section>
+					<div class="banner_nav_right_banner">
+						<h2>Vendor Order Details</h2>
+						<!-- 
+						<h3 id="admin_name">
+							Welcome <span>Anurodh</span> !!.
+						</h3> 
+						<p>dashboard details</p> -->
+				</section>
+			</div>
+			<!-- right -->
+			<div class="container" style="margin-bottom: 10em;">
+				<div class="col-sm-10"style="background-color: #f6f6f6; border: solid #D8D8D8 1px; padding: 0; border-radius: 5px; margin: 2em 0;">
+					<div class="col-sm-12" style="padding: 1em 0;; border-radius: 5px 5px 0 0; background-color: #F5F5D4;">
+						<div class="col-sm-12">
+							<div class="col-sm-6">
+								Customer Name: <span><b>### --- val --- ###</b></span>
+							</div>
+							<div class="col-sm-6">
+								Order No.: <span><b>### --- val --- ###</b></span>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="col-sm-6">
+								Address: <span><b>### --- val --- ###</b></span>
+							</div>
+							<div class="col-sm-6">
+								Special Instruction: <span><b>### --- val --- ###</b></span>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div style="float: right;" class="col-sm-12">
+								Contact No.: <span><b>### --- val --- ###</b></span>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div style="float: right;" class="col-sm-12">
+								Item Count: <span><b>### --- val --- ###</b></span>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div style="float: right;" class="col-sm-12">
+								Total Estimate: <span><b>### --- val --- ###</b></span>
+							</div>
+						</div>
+					</div>
+					<div align="center">
+						<div class="col-sm-12" style="padding: 3px; background: #E8E8E8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4">Item Description</div>
+								<div class="col-sm-3">Unit Price</div>
+								<div class="col-sm-2">Quantity</div>
+								<div class="col-sm-3">Total Price</div>
+							</div>
+						</div>
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>20</span>
+								</div>
+								<div class="col-sm-2">
+									<span>1</span>
+								</div>
+								<div class="col-sm-3">
+									<span>100</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>1500</span>
+								</div>
+								<div class="col-sm-2">
+									<span>3</span>
+								</div>
+								<div class="col-sm-3">
+									<span>4500</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>200</span>
+								</div>
+								<div class="col-sm-2">
+									<span>20</span>
+								</div>
+								<div class="col-sm-3">
+									<span>4000</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>20</span>
+								</div>
+								<div class="col-sm-2">
+									<span>5</span>
+								</div>
+								<div class="col-sm-3">
+									<span>100</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>15</span>
+								</div>
+								<div class="col-sm-2">
+									<span>3</span>
+								</div>
+								<div class="col-sm-3">
+									<span>45</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>4599</span>
+								</div>
+								<div class="col-sm-2">
+									<span>7</span>
+								</div>
+								<div class="col-sm-3">
+									<span>32,193</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>100</span>
+								</div>
+								<div class="col-sm-2">
+									<span>5</span>
+								</div>
+								<div class="col-sm-3">
+									<span>500</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-4"
+									style="display: flex;">
+									<a href=""><img src="images/channa.jpg" alt=" "
+										class="img-responsive" style="height: 50px; width: 50px;"></a>
+									<a href="#" style="padding: 0 1em;">Product Name 1</a>
+								</div>
+								<div class="col-sm-3">
+									<span>20</span>
+								</div>
+								<div class="col-sm-2">
+									<span>15</span>
+								</div>
+								<div class="col-sm-3">
+									<span>300</span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-sm-12"
+							style="padding: 1em; border-top: 1px solid #B8B8B8;">
+							<div style="padding: 5px;">
+								<div class="col-sm-7" style="display: flex;">
+								Total in words:  <b><span>Fifty six thousand three hundred ninty eight only.</span></b>
+								</div>
+								<div class="col-sm-2">
+									<b><span>Total</span></b>
+								</div>
+								<div class="col-sm-3">
+									<b><span>56,398</span></b>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-sm-12"><button type="button" class="btn btn-primary"> Back </button></div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container">
+			<p>
+				<b>Privacy Policy:</b> All cited trademarks are the property of
+				their respective owners. CAUTION: The law restricts these devices to
+				sale by or on the order of a physician. Indications,
+				contraindications, warnings and instructions for use can be found in
+				the product labelling supplied with each device. Information for the
+				use only in countries with applicable health authority product
+				registrations.
+			</p>
+			<div class="clearfix"></div>
+			<div class="footer_copy">
+				<p>2015 Copyright &copy; Boston Scientific Corporation. All
+					rights reserved.</p>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

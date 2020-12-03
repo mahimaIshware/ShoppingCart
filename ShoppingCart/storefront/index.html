@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopping Frontpage | Home</title>
+<!-- To Clear Cookies -->
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/shop.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+</head>
+
+<body>
+<!-- header -->
+	<div class="a2z_header">
+
+      <div class="header_right1">
+			<a href="#" onclick="showCartItems('cartItems')"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"><span class='badge badge-success' style="vertical-align:top; display: none" id='cartCount'> 0 </span></i></a>
+			
+		</div>
+
+	   <div class="header_right">
+			<a href="#"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i></a>
+		</div>
+		 <div class="header_right">
+			<a href="#"><i class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
+		</div>
+		<div class="header_right">
+			<a href="#" onclick="showUserProfile('user')"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+<!-- script-for sticky-nav -->
+	<script>
+	$(document).ready(function() {
+		 var navoffeset=$(".a2z_header").offset().top;
+		 $(window).scroll(function(){
+			var scrollpos=$(window).scrollTop();
+			if(scrollpos >=navoffeset){
+				$(".a2z_header").addClass("fixed");
+			}else{
+				$(".a2z_header").removeClass("fixed");
+			}
+		 });
+
+	});
+	</script>
+<!-- //script-for sticky-nav -->
+	<div class="logo_products">
+		<div class="container">
+			<div class="logo_products_left">
+				<a href="index.html"><img src="" id="shopLogoLink"></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<div class="logo_products_left1">
+				<ul class="special_items">
+					<li><a href="#" onclick="replaceContainer('about')">About Us</a><i>/</i></li>
+					<li><a href="#" onclick="replaceContainer('offers')">Offers</a><i>/</i></li>
+					<li><a href="#" onclick="replaceContainer('contact')">Contact us</a></li>
+				</ul>
+			</div>
+			<div class="logo_products_left1">
+				<ul class="phone_email">
+					<li><i class="fa fa-phone" aria-hidden="true"></i><span id="header_phone">(+91) 9415 000 839</span></li>
+					<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:store@store.com" id="header_email">store@store.com</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- Menu  -->
+			<div style="text-align:center; background:#000">
+				<nav class="navbar nav_bottom">
+			 <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header nav_2">
+				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+			   </div>
+			   <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav nav_1">
+						<li><a href="index.html">Default</a></li>
+						<li><a href="#">Category 1</a></li>
+						<li><a href="#">Category 2</a></li>
+						<li><a href="#">Category 3</a></li>
+						<li><a href="#">Category 4</a></li>
+						<li><a href="#">Category 5</a></li>
+					</ul>
+				 </div><!-- /.navbar-collapse -->
+			</nav>
+			</div>
+					<!-- Menu-->
+<!-- //header -->
+<!-- Cart -->
+	<div class="top-brands">
+		<div class="container" id="container">
+			<h3></h3>
+			<!-- Row 1 -->
+			<div class="a2z_top_brands_grids">
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block" >
+										<div class="cart-thumb">
+											<img title=" " alt=" " src="images/rice.jpeg" />
+											<p>Basmati rise</p>
+											<form action="#" method="post" onclick="addToCart(this,e)">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 7.99 <span>&#8377; 10.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block" >
+										<div class="cart-thumb">
+											<img title=" " alt=" " src="images/channa-daal.jpg" />
+											<p>Channa Dal</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 11.99 <span>&#8377; 15.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid_pos">
+								<img src="images/offer.png" alt=" " class="img-responsive" />
+							</div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block">
+										<div class="cart-thumb">
+											<img src="images/channa.jpg" alt=" " class="img-responsive" />
+											<p>Channa Khada</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 8.00 <span>&#8377; 10.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid_pos">
+								<img src="images/offer.png" alt=" " class="img-responsive" />
+							</div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block">
+										<div class="cart-thumb">
+											<img src="images/sugar.jpg" alt=" " class="img-responsive" />
+											<p>Sugar</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 9.00 <span>&#8377; 11.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- //Row 1 -->
+			<!-- Row 2 -->
+			<div class="a2z_top_brands_grids">
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="tag"><img src="images/tag.png" alt=" " class="img-responsive" /></div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block" >
+										<div class="cart-thumb">
+											<img title=" " alt=" " src="images/arhar.jpeg" />
+											<p>Arhaar Dal</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 7.99 <span>&#8377; 10.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block" >
+										<div class="cart-thumb">
+											<img title=" " alt=" " src="images/moong.jpg" />
+											<p>Moong Dal</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 11.99 <span>&#8377; 15.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid_pos">
+								<img src="images/offer.png" alt=" " class="img-responsive" />
+							</div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block">
+										<div class="cart-thumb">
+											<img src="images/vegetable-oil.jpg" alt=" " class="img-responsive" />
+											<p>Vegetable Oil</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 8.00 <span>&#8377; 10.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 top_brand_left">
+					<div class="hover14 column">
+						<div class="a2z_top_brand_left_grid">
+							<div class="a2z_top_brand_left_grid_pos">
+								<img src="images/offer.png" alt=" " class="img-responsive" />
+							</div>
+							<div class="a2z_top_brand_left_grid1">
+								<figure>
+									<div class="cart-item block">
+										<div class="cart-thumb">
+											<img src="images/chhoola.jpg" alt=" " class="img-responsive" />
+											<p>Chhola</p>
+											<form action="#" method="post">
+												<input type="image" src="images/red-plus-sign.png" alt="Submit" width="35" height="35" style="float:right;">
+											</form>
+											<h4>&#8377; 9.00 <span>&#8377; 11.00</span></h4>
+										</div>
+									</div>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- // Row 2 -->
+		</div>
+	</div>
+<!-- //top-brands -->
+
+
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="col-md-3 footer_grid">
+				<h3>Section1</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 2</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 3</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 footer_grid">
+				<h3>Section 4</h3>
+				<ul class="footer_grid_list">
+					<li><a href="#">one</a></li>
+					<li><a href="#">Two</a></li>
+					<li><a href="#">Three</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			<div class="a2z_footer_grids">
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h4>100% secure payments</h4>
+						<img src="images/card.png" alt=" " class="img-responsive" />
+					</div>
+				</div>
+				<div class="col-md-3 footer_grid a2z_footer_grids_footer">
+					<div class="footer_grid_bottom">
+						<h5>connect with us</h5>
+						<ul class="a2z_social_icons">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+<a onclick="topFunction()" id="myBtn" title="Go to top" class="right">Go to Top <i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+			</div>
+			<div class="footer_copy">
+				<p>&copy; 2016 Grocery Store. All rights reserved | Design by <a href="#">Anurodh</a></p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store Admin</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //font-awesome icons -->
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/shop.js"></script>
+<!-- //js -->
+</head>
+
+
+<body>
+<!-- banner -->
+	<div class="banner">
+		<div class="banner_nav_left">
+		<div class="logo_products_left">
+				<a href="index.html"><img src="#" alt="logo" class="image_logo_thumbnail" id="shopLogoLink"></a>
+				<!--<h1><a href="index.html"><span>Grocery</span> Store</a></h1> -->
+			</div>
+			<nav class="navbar nav_bottom">
+			 <!-- Brand and toggle get grouped for better mobile display -->
+			  <div class="navbar-header nav_2">
+				  <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+			   </div>
+			   <!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+					<ul class="nav navbar-nav nav_1">
+						<li><a href="storeConfig.html">Store Config</a></li>
+						<li><a href="category.html">Category</a></li>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="orders.html">Orders<span class="notification_bubble" style="display:none" id="new_cart_count"></span></a></li>
+						<li><a href="users.html">Users</a></li>
+						<li><a href="offer.html">Offers</a></li>
+						<li></li>
+					</ul>
+					<button class="log_out">Log Out</button>
+				 </div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+		<div class="banner_nav_right">
+			<section>
+				<div class="banner_nav_right_banner">
+						<h1>Dashboard</h1>
+								<h3 id="admin_name">Welcome <span>Anurodh</span> !!.</h3>
+								<p>description for this page.</p>
+								<button class="log_out right" id="vendor_config_remove" style="margin-left: 1px">Remove</button>
+								<a href="menu.html" id="vendor_config_add_manger"><button class="log_out right"  style="margin-left: 1px">Add manger</button></a>
+								<a href="storeConfigEdit.html" id="edit_link"><button class="log_out right">Edit Store Config</button></a>
+								<div>
+								<h3>Store Configuration</h3>
+								<!--<p>
+								<span style="float:right"> Page
+								1 <<<input class="current-value" value="2">>>3<button>Go</button></span></p>-->
+
+								<table class="timetable_sub">
+									<thead>
+										<tr>
+											<th>Store Property</th>
+											<th>Value</th>
+											<!--<th>Category Details</th>
+											<th>Status</th>
+											<th></th>
+											<th></th>-->
+										</tr>
+									</thead>
+									<tbody id="tbl_body_container">
+										<div id="container">
+										<tr class="rem1 odd">
+												<td class="invert">Shop Name</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">Categories</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 odd">
+												<td class="invert">Category Description:</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">Delivery Flag</td>
+												<td class="invert">undefined</td>
+											</tr><tr class="rem1 odd">
+												<td class="invert">Delivery Start Time</td>
+												<td class="invert">undefined</td>
+											</tr><tr class="rem1 even">
+												<td class="invert">Delivery End Time</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 odd">
+												<td class="invert">Store Open Time</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">Store Close Time</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 odd">
+												<td class="invert">Store Days</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">status</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 odd">
+												<td class="invert">Delivery Location Id</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">Contact</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 odd">
+												<td class="invert">Email</td>
+												<td class="invert">undefined</td>
+											</tr>
+											<tr class="rem1 even">
+												<td class="invert">Address</td>
+												<td class="invert">undefined</td>
+											</tr>
+										</div>
+									</tbody></table>
+									<input type="text" hidden="hidden" id="vendor_id">
+							</div>
+							<div class="privacy about">
+			<h3>About Us</h3>
+			<p class="text" id="aboutUs"></p>
+			<div class="a2z_about_grids">
+				<div class="col-md-6" style="float: right;">
+					<img class="img-responsive" src="images/product.png"  id="aboutShopLogoLink">
+				</div>
+				<div class="col-md-6 a2z_about_grid_left">
+					<ol>
+						<li id="featuresOne">undefined</li>
+						<li id="featuresTwo">undefined</li>
+						<li id="featuresThree">undefined</li>
+						<li id="featuresFour">undefined</li>
+						<li id="featuresFive">undefined</li>
+						<li id="featuresSix">undefined</li>
+					</ol>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+			</section>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+<!-- banner -->
+
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<p><b>Privacy Policy:</b> All cited trademarks are the property of their respective owners. CAUTION: The law restricts these devices to sale by or on the order of a physician. Indications, contraindications, warnings and instructions for use can be found in the product labelling supplied with each device. Information for the use only in countries with applicable health authority product registrations. </p>
+			<div class="clearfix"> </div>
+			<div class="footer_copy">
+				<p>2015 Copyright &copy; Boston Scientific Corporation. All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+window.addEventListener("load", function(event){
+	loadVendorConfig(new URLSearchParams(window.location.search).get("vendorId"));
+	//healthCheck();
+});
+$(document).ready(function(event){
+	$("#vendor_config_remove").click( function(e){
+		softDeleteVendorConfig($("#vendor_id").val());
+	});
+})
+</script>
+</body>
+</html>
